@@ -1,7 +1,3 @@
-altair
-numpy
-pandas
-pydeck
 streamlit
+pandas
 matplotlib.pyplot
-matplotlib
