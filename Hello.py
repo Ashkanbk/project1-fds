@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 rs=pd.read_csv('results.csv')
 ra=pd.read_csv('fifa.csv')
+
 st.title('History of matches')
 
 Home = st.selectbox(
