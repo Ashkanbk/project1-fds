@@ -11,14 +11,11 @@ Home = st.selectbox(
     'Home Team:',
     ('England', 'France', 'Italy'))
 
-st.write('You selected:', Home)
-
 
 Away = st.selectbox(
     'Away Team:',
     ('France', 'England', 'Italy'))
 
-st.write('You selected:', Away)
 
 newra=rs[(rs['home_team'] == Home) & (rs['away_team'] == Away)]
 
