@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-rs=pd.read_csv('results.csv')
 ra=pd.read_csv('fifa.csv')
+rs=pd.read_csv('results.csv')
 
 st.title('History of matches')
 
