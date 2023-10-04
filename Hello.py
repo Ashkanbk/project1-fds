@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 
-st.image("header.JPG", width=700)
+st.image("header.JPG", width=1000)
 
 
 
