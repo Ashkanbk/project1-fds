@@ -2,6 +2,13 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
+
+st.image("header.JPG", width=700)
+
+
+
+
 ra=pd.read_csv('fifa.csv')
 rs=pd.read_csv('results.csv')
 
