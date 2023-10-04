@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 
 st.image("header.JPG", use_column_width="always")
 
+st.title('History of matches')
 
 col1, col2 = st.columns(2)
 
@@ -25,11 +26,31 @@ with col2:
 ra=pd.read_csv('fifa.csv')
 rs=pd.read_csv('results.csv')
 
-st.title('History of matches')
 
+newra=rs[(rs['home_team'] == 'England') & (rs['away_team'] == 'France')]
+def calculate_result(row):
+    if row['home_score'] > row['away_score']:
+        return 'Win'
+    elif row['home_score'] < row['away_score']:
+        return 'Lose'
+    else:
+        return 'Draw'
 
+# Apply the function to create a new column 'result'
+newra['result'] = newra.apply(calculate_result, axis=1)
 
+win_counts = newra['result'].value_counts()
 
+font = {'family': 'serif', 'color': 'darkred', 'weight': 'normal', 'size': 16}
+
+# Create a bar plot
+fig, ax = plt.subplots()
+ax.bar(win_counts.index, win_counts)
+ax.set_title('Winning Statistics', fontdict=font)
+
+    
+# Show the plot
+st.pyplot(fig)
 
 
 
@@ -64,6 +85,9 @@ plt.xticks(new_ticks, new_labels)
 plt.title('Ranking over time')
 plt.legend()
 st.pyplot(fig)
+
+
+
 
 
 
