@@ -7,21 +7,30 @@ import matplotlib.pyplot as plt
 st.image("header.JPG", use_column_width="always")
 
 
+col1, col2 = st.columns(2)
 
+with col1:
+    Home = st.selectbox(
+        'Home Team:',
+        ('England', 'France', 'Italy')
+    )
+
+
+with col2:
+    Away = st.selectbox(
+        'Away Team:',
+        ('France', 'England', 'Italy')
+    )
 
 ra=pd.read_csv('fifa.csv')
 rs=pd.read_csv('results.csv')
 
 st.title('History of matches')
 
-Home = st.selectbox(
-    'Home Team:',
-    ('England', 'France', 'Italy'))
 
 
-Away = st.selectbox(
-    'Away Team:',
-    ('France', 'England', 'Italy'))
+
+
 
 
 newra=rs[(rs['home_team'] == Home) & (rs['away_team'] == Away)]
